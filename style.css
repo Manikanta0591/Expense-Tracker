@@ -1,0 +1,176 @@
+:root {
+    --primary-color: #1A237E;
+    --secondary-color: #283593;
+    --accent-color: #42A5F5;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --light-text: #ffffff;
+    --total-bg: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color:  #e0f2f7;;
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.app-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.app-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.total-card {
+    background: var(--total-bg);
+    color: var(--light-text);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.total-card .card-title {
+    color: var(--light-text);
+}
+
+.spending-amount {
+    font-size: 4.5rem; 
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.25rem rgba(164, 44, 214, 0.25); 
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-sm {
+    padding: .25rem .7rem;
+    font-size: .8rem;
+    border-radius: .4rem;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 8px; 
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-bottom: none;
+    padding: 12px 15px;
+}
+
+.table th:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.table th:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.table td {
+    background-color: var(--light-bg);
+    border: none;
+    vertical-align: middle;
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table tbody tr:first-child td:first-child {
+    border-top-left-radius: 8px;
+}
+.table tbody tr:first-child td:last-child {
+    border-top-right-radius: 8px;
+}
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+}
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
+.table tbody tr td.text-center.text-muted {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+@media (max-width: 576px) {
+    .spending-amount {
+        font-size: 3.5rem;
+    }
+    .table th, .table td {
+        padding: 8px 10px;
+    }
+    .btn-sm {
+        padding: .2rem .5rem;
+        font-size: .75rem;
+    }
+}
